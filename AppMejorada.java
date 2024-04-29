@@ -259,6 +259,21 @@ public class AppMejorada {
                     if (opcion == 1) {
                         equipoStream.agregarEquipoStream(equipoStream.generarEquipoAleatorio.get());
                         equipoStream.mostrarEquipoStream();
+                        
+                    }else if (opcion == 2) {
+                        GenerarPartido g = new GenerarPartido();
+                        GenerarPartido equipoLocal = equipoStream.partidoEntreEquipos.get();
+                        GenerarPartido equipoVisitante = equipoStream.partidoEntreEquipos.get();
+                        System.out.println();
+                        System.out.println("Por favor espere 5 segundos y hasta que le pida que hacer de nuevo");
+                        System.out.println();
+                        System.out.println("Partido entre: " + equipoLocal.getNombreEquipoLocal() + " y " + equipoVisitante.getNombreEquipoVisitantes());
+                        System.out.println("Jugador destacado del equipo local (" + equipoLocal.getNombreEquipoLocal() + "): " + equipoLocal.getNombre());
+                        System.out.println("Jugador destacado del equipo visitante (" + equipoVisitante.getNombreEquipoVisitantes() + "): " + equipoVisitante.getNombre());
+                        System.out.println();
+                        int[] vec = g.imprimirPartido(equipoLocal,equipoVisitante);
+                        System.out.println();
+                        g.ResumenPartido(equipoLocal, equipoVisitante,vec);
 
                     }
                     break;
@@ -282,7 +297,7 @@ public class AppMejorada {
         System.out.println();
         System.out.println("Ingrese que desea ver: ");
         System.out.println("1. Generar un equipo aleatoriamente");
-        System.out.println("2. Simulacion de una partido");
+        System.out.print("2. Simulacion de una partido");
 
         int opc = t.nextInt();
 

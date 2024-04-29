@@ -72,7 +72,7 @@ public class EquipoStream {
         int numeroGoles = random.nextInt(6)+1;
         int numeroPases = random.nextInt(31)+1;
         int numeroAutoGoles = random.nextInt(2)+1;
-        double salarioJugador = random.nextDouble() * 1000000 + 500000;
+        double salarioJugador = Math.round((random.nextDouble() * 1000000 + 500000) * 100.0) / 100.0;
         //para arquero
         int golesTapadosArquero = random.nextInt(21)+1;
         CalidadJugador agilidadManos = calidadJugadores;
@@ -114,11 +114,24 @@ public class EquipoStream {
         return equipoFutbol;
     };
     
-    Supplier <EquipoFutbol> partidoEntreEquipos = () -> {
+///////////////////////////////////////////////////////////////
+    Supplier <GenerarPartido> partidoEntreEquipos = () -> {
+     Random random = new Random();
+    String[] POSICIONES = {"Arquero", "Defensa", "Delantero"};
+    String[] NOMBRES_JUGADORES = {"Kevin Quintero", "Adrian Lopez", "Gloria Lora","Juan Pablo","Bertulio Perez"};
+    String[] NOMBRES_EQUIPOS_LOCAL = {"Atletico Nacional", "Medellin", "Millonarios"};
+    String[] NOMBRES_EQUIPOS_VISITANTE = {"Junior", "Once Caldas", "Deportivo Cali"};
+    int NUMERO_MAXIMO_GOLES = 2;
 
-        //int numeroGoles = random.nextInt(3);
+    String nombreJugador = NOMBRES_JUGADORES[random.nextInt(NOMBRES_JUGADORES.length)];
+    String posicion = POSICIONES[random.nextInt(POSICIONES.length)];
+    int numeroGoles = random.nextInt(NUMERO_MAXIMO_GOLES) + 1;
+    String nombreEquipoLocal = NOMBRES_EQUIPOS_LOCAL[random.nextInt(NOMBRES_EQUIPOS_LOCAL.length)];
+    String nombreEquipoVisitante = NOMBRES_EQUIPOS_VISITANTE[random.nextInt(NOMBRES_EQUIPOS_VISITANTE.length)];
 
-        return null;
+    GenerarPartido generar = new GenerarPartido(nombreJugador, posicion, nombreEquipoLocal, nombreEquipoVisitante, numeroGoles);
+    return generar;
+
     };
 
     public List<EquipoFutbol> obtenerEquipoStream(){
