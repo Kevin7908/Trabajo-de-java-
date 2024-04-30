@@ -298,20 +298,33 @@ public class AppMejorada {
                     break;
 
                     case 6:
-
+                    // Hacemos un ciclo
                     do {
+                        // Llama una funcion la cual retorna un int 
                         int opcion = mostrarOpcionStream();
-                
+                        // Dependiendo de opcion (que es el int que retorno la funcion) entra en un int
                         if (opcion == 1) {
+                            // Agrego los equipos generado y para eso como vemos primero llamamos a la funcion
+                            // de equipoStream agregar y luego le enviamos la funcion para generar equipos
+                            // aleatoriamnete
                             equipoStream.agregarEquipoStream(equipoStream.generarEquipoAleatorio.get());
+                            // Mostramos con la funcion mostrar de equipoStream
                             equipoStream.mostrarEquipoStream();
                         } else if (opcion == 2) {
+                            // Creamos una instancia de GenerarPartido
                             GenerarPartido g = new GenerarPartido();
+                            // Creamos una variable de tipo GenerarPartido y le damos como datos lo que nos genero
+                            // aleatoriamnete la funcion partidoEntreEquipos 
+                            // La funcion basicamente nos rellena un construtor de GenerarEquipos
+                            // En este caso rellenamos dos una para equipoLocal y otra para equipoVisitante
                             GenerarPartido equipoLocal = equipoStream.partidoEntreEquipos.get();
                             GenerarPartido equipoVisitante = equipoStream.partidoEntreEquipos.get();
+                            // Le damos al usuario unas recomendaciones
                             System.out.println();
                             System.out.println("Por favor espere 5 segundos y hasta que le pida que hacer de nuevo");
                             System.out.println();
+                            // Obtenemos el nombre del equipoLocal para mostrarlo y el nombre de equipoVisitante
+                            // Y lo mismo en las otras lineas
                             System.out.println("Partido entre: " + equipoLocal.getNombreEquipoLocal() + " y "
                                 + equipoVisitante.getNombreEquipoVisitantes());
                             System.out.println("Jugador destacado del equipo local (" + equipoLocal.getNombreEquipoLocal()
@@ -319,22 +332,30 @@ public class AppMejorada {
                             System.out.println("Jugador destacado del equipo visitante ("
                                 + equipoVisitante.getNombreEquipoVisitantes() + "): " + equipoVisitante.getNombre());
                             System.out.println();
+                            // Creamos un vector para recibir los datos retornados por la funcion en este vector se guarda
+                            // el numero de goles del equipo visitante y local
                             int[] vec = g.imprimirPartido(equipoLocal, equipoVisitante);
                             System.out.println();
+                            // g es un objeto de GenerarEquipos que llama na funcion que nos dara el resumen
+                            // de el partido
                             g.ResumenPartido(equipoLocal, equipoVisitante, vec);
                         }else if (opcion ==3) {
+                            // Llamamos la funcion organizar con streams
                             equipoStream.organizarConStreams();
                         }else if (opcion == 4) {
+                            // Llamamos la funcion sumarGoles y como es un consumer utilizamos la funcion
+                            //accept para enviarle equipoStream y nos sume todos los datos que tiene el ArrayList
                             equipoStream.SumarGolesEquipoStream.accept(equipoStream);
                         }else if (opcion == 5) {
+                            // Nos filtra todos los jugadores que tengan 5 o mas goles 
                             equipoStream.filtrarMayores5();
                         }
-                
                         // Preguntamos al usuario si desea seguir
                         System.out.println();
                         System.out.println("¿Desea seguir en esta opción? 1=Si 2=No: ");
                         int respuesta = t.nextInt();
-                
+                        // Si la variable respuesta es igual a 2 entonces se termina el do while
+                        // y nos lleva al menu principal
                         if (respuesta == 2) {
                             break;
                         }
@@ -372,7 +393,6 @@ public class AppMejorada {
         System.out.println("4. Sumar goles de base de datos secundaria con Consumer");
         System.out.println("5. Filtrar equipos tienen mas de 5 goles");
         System.out.println();
-
         int opc = t.nextInt();
 
         return opc;
