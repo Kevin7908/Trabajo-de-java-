@@ -11,7 +11,7 @@ public class GenerarPartido {
     public static final Random random = new Random();
 
     public int[] imprimirPartido(GenerarPartido equipoLocal, GenerarPartido equipoVisitante) {
-        int golesLocal =0, golesVisitante=0;
+        int golesLocal = 0, golesVisitante = 0;
         for (int i = 0; i < 4; i++) {
 
             try {
@@ -25,15 +25,15 @@ public class GenerarPartido {
                 System.out.println(
                         "¡GOL! " + equipoLocal.getNombre() + " del equipo " + equipoLocal.getNombreEquipoLocal() +
                                 " anota un gol en la posición " + equipoLocal.getPosicion());
-                                golesLocal += 1;
+                golesLocal += 1;
             } else {
                 System.out.println("¡GOL! " + equipoVisitante.getNombre() + " del equipo "
                         + equipoVisitante.getNombreEquipoVisitantes() +
                         " anota un gol en la posición " + equipoVisitante.getPosicion());
-                        golesVisitante +=1;
+                golesVisitante += 1;
             }
         }
-        int vec[] = {golesLocal,golesVisitante};
+        int vec[] = { golesLocal, golesVisitante };
         return vec;
 
     }

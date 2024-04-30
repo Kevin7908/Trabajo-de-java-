@@ -1,15 +1,13 @@
 
 public class Delantero extends EquipoFutbol {
 
-    //como vemos arriba esta clase Delantero extiende de EquipoFutbol
-    //Y estos son atributos de la clase Delantero
-    //Varibles de tipo CalidadJugador 
+    // como vemos arriba esta clase Delantero extiende de EquipoFutbol
+    // Y estos son atributos de la clase Delantero
+    // Varibles de tipo CalidadJugador
     private CalidadJugador desmarque;
     private CalidadJugador remateDePrimera;
     private int golesAnotadosPartido;
     private CalidadJugador presicionTiros;
-
-    
 
     public Delantero(String equipo, String posicion, NombreEquipo nombreEqui, int numeroJugador, int numeroGoles,
             int numeroPases, int numeroAutoGoles, double salarioJugador, CalidadJugador desmarque,
@@ -52,7 +50,8 @@ public class Delantero extends EquipoFutbol {
     public void setGolesAnotadosPartido(int golesAnotadosPartido) {
         this.golesAnotadosPartido = golesAnotadosPartido;
     }
-    //funciones polimorficas de la clase EquipoFutbol
+
+    // funciones polimorficas de la clase EquipoFutbol
     @Override
     public double calcularGoles() {
         return 0;
@@ -67,24 +66,25 @@ public class Delantero extends EquipoFutbol {
     public double calcularSalarioTotal() {
         return 0;
     }
-    //un to string para mostrar el estado del objeto
+
+    // un to string para mostrar el estado del objeto
     @Override
     public String toString() {
-        return "╔═════════════════════════════════════════════════════\n" +
-               "║               Atributos del Delantero               \n" +
-               "╠═════════════════════════════════════════════════════\n" +
-               "║ Nombre del Equipo: " + getEquipo() + "          \n" +
-               "║ Número de Jugador: " + getNumeroJugador() + "       \n" +
-               "║ Posición: " + getPosicion() + "                     \n" +
-               "║ Número de Goles: " + getNumeroGoles() + "           \n" +
-               "║ Número de Pases: " + getNumeroPases() + "           \n" +
-               "║ Número de Autogoles: " +getNumeroAutoGoles()+"      \n" +
-               "║ Salario del Jugador: " + getSalarioJugador()+"      \n" +
-               "║ Desmarque: " + desmarque + "                        \n" +
-               "║ Remate de primera: " + remateDePrimera + "          \n" +
-               "║ Goles anotados por partido: "+golesAnotadosPartido+"\n" +
-               "║ Precisión de tiros: " + presicionTiros + "          \n" +
-               "╚═════════════════════════════════════════════════════";
+        return "╔════════════════════════════════════════════════\n" +
+                "║               Atributos del Delantero               \n" +
+                "╠════════════════════════════════════════════════\n" +
+                "║ Nombre del Equipo: " + getEquipo() + "          \n" +
+                "║ Número de Jugador: " + getNumeroJugador() + "       \n" +
+                "║ Posición: " + getPosicion() + "                     \n" +
+                "║ Número de Goles: " + getNumeroGoles() + "           \n" +
+                "║ Número de Pases: " + getNumeroPases() + "           \n" +
+                "║ Número de Autogoles: " + getNumeroAutoGoles() + "      \n" +
+                "║ Salario del Jugador: " + getSalarioJugador() + "      \n" +
+                "║ Desmarque: " + desmarque + "                        \n" +
+                "║ Remate de primera: " + remateDePrimera + "          \n" +
+                "║ Goles anotados por partido: " + golesAnotadosPartido + "\n" +
+                "║ Precisión de tiros: " + presicionTiros + "          \n" +
+                "╚════════════════════════════════════════════════";
     }
-    
+
 }

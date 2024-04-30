@@ -1,9 +1,11 @@
 import java.util.Scanner;
 
 public class MostrarGenericos {
-    //volvemos statico el Scanner para utilizarlo donde queramos
+    // volvemos statico el Scanner para utilizarlo donde queramos
     static Scanner teclado = new Scanner(System.in);
-    //Lo mismo con esta funcion se vuelve statica y va a retornar algo de tipo NombreEquipo
+
+    // Lo mismo con esta funcion se vuelve statica y va a retornar algo de tipo
+    // NombreEquipo
     static NombreEquipo mostrarEquipos() {
         // Mostrar la lista de equipos
         System.out.println();
@@ -30,26 +32,31 @@ public class MostrarGenericos {
         // Verificar si el número de equipo está dentro del rango válido
         if (numeroEquipo >= 1 && numeroEquipo <= NombreEquipo.values().length) {
             // Obtener el nombre del equipo correspondiente al número ingresado
-            //Se retorna algo de tipo NombreEquipo el .values() nos devuelve un array que contiene todos
-            //los valores de la enumeración, [numeroEquipo - 1] esta es la varible con el numero que elijio
-            //el usuario y -1 para que no no salge el error de index bounds 
-            //y asi nos retorna una enumeracion dependiendo del numero que elijio el usuario
+            // Se retorna algo de tipo NombreEquipo el .values() nos devuelve un array que
+            // contiene todos
+            // los valores de la enumeración, [numeroEquipo - 1] esta es la varible con el
+            // numero que elijio
+            // el usuario y -1 para que no no salge el error de index bounds
+            // y asi nos retorna una enumeracion dependiendo del numero que elijio el
+            // usuario
             return NombreEquipo.values()[numeroEquipo - 1];
         } else {
             System.out.println("Número de equipo fuera de rango.");
             return null; // Devolver null si el número está fuera de rango
         }
 
-    }//fin funcion
-//Lo mismo con esta funcion se vuelve statica y va a retornar algo de tipo NombreEquipo
-    static CalidadJugador mostrarCalidad(){
+    }// fin funcion
+    // Lo mismo con esta funcion se vuelve statica y va a retornar algo de tipo
+    // NombreEquipo
+
+    static CalidadJugador mostrarCalidad() {
         // Mostrar la lista de equipos
         int c = 1;
         for (CalidadJugador calidad : CalidadJugador.values()) {
             System.out.println(c + ". " + calidad);
             c++;
         }
-        //pedimos y leeamos el numero que se ingreso 
+        // pedimos y leeamos el numero que se ingreso
         System.out.println("Ingrese el número correspondiente: ");
         int numeroCalidad = 0;
 
@@ -72,6 +79,6 @@ public class MostrarGenericos {
             System.out.println("Número de calidad fuera de rango.");
             return null; // Devolver null si el número está fuera de rango
         }
-    }//fin funcion
+    }// fin funcion
 
 }
