@@ -30,6 +30,9 @@ public class GestionarEquipos {
      * Muestra la información de todos los equipos de fútbol en la lista de equipos.
      */
     public void mostrarEquipos() {
+        if (equipos.size() == 0) {
+            System.out.println("");
+        }
         // Itera sobre la lista de equipos de fútbol
         for (EquipoFutbol e : equipos) {
             // Imprime la información del equipo
@@ -45,13 +48,18 @@ public class GestionarEquipos {
     // setteamos con los nuevos datos
     // y crrramos el ciclo
     public void modificarEquipos(int numju, String equi, int nuevoNumeroju, String nuevoEqui) {
-        for (EquipoFutbol equipo : equipos) {
-            if (equipo.getEquipo().equals(equi) && equipo.getNumeroJugador() == numju) {
-                equipo.setNumeroJugador(nuevoNumeroju);
-                equipo.setEquipo(nuevoEqui);
-                break; // Rompe el bucle una vez que se han modificado los datos del equipo
+        if (equipos.size() == 0) {
+            System.out.println("Error,ingrese datos en la base de datos principal");
+        }else{
+            for (EquipoFutbol equipo : equipos) {
+                if (equipo.getEquipo().equals(equi) && equipo.getNumeroJugador() == numju) {
+                    equipo.setNumeroJugador(nuevoNumeroju);
+                    equipo.setEquipo(nuevoEqui);
+                    break; // Rompe el bucle una vez que se han modificado los datos del equipo
+                }
             }
         }
+
     }
 
     /**
@@ -62,6 +70,9 @@ public class GestionarEquipos {
      * equi El nombre del equipo que se desea eliminar.
      */
     public void eliminarEquipos(int numju, String equi) {
+        if (equipos.size() == 0) {
+            System.out.println("Error, ingrese datos a la base de datos principal");
+        }else{
         // Se crea un iterador sobre la lista de equipos de fútbol.
         Iterator<EquipoFutbol> iterator = equipos.iterator();
         // Se recorre la lista utilizando el iterador.
@@ -75,6 +86,8 @@ public class GestionarEquipos {
                 iterator.remove();
             }
         }
+        }
+
     }
 
     /**

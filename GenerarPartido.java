@@ -12,7 +12,7 @@ public class GenerarPartido {
 
     public int[] imprimirPartido(GenerarPartido equipoLocal, GenerarPartido equipoVisitante) {
         int golesLocal = 0, golesVisitante = 0;
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 6; i++) {
 
             try {
                 Thread.sleep(5000); // Esperar 5 segundos

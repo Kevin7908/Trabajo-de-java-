@@ -21,7 +21,7 @@ public class AppMejorada {
         // Ciclo while que se ejecutará mientras la variable continuar sea verdadera.
         while (continuar) {
             System.out.println("╔═══════════════════════════════════════╗");
-            System.out.println("║         Bienvenido al menu            ║");
+            System.out.println("║        Base de datos principal        ║");
             System.out.println("╠═══════════════════════════════════════╣");
             System.out.println("║  1. Agregar jugador                   ║");
             System.out.println("║  2. Borrar jugador                    ║");
@@ -358,6 +358,8 @@ public class AppMejorada {
     @SuppressWarnings("resource")
     public static int mostrarOpcionStream() {
         Scanner t = new Scanner(System.in);
+        System.out.println("");
+        System.out.println("         Base de datos secundaria    ");
         System.out.println("");
         System.out.println("Hola, este es un menu muy sencillo a comparacion de los anteriores");
         System.out.println("Tambien tenga en cuenta de que si no ha agregado nada desde la opcion 1");
