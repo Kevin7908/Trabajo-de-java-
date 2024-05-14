@@ -54,15 +54,13 @@ public class AppMejorada {
                     // Impresión de la solicitud para que el usuario ingrese datos del jugador.
                     // Tambien hay una lectura de los datos ingresados por la persona.
                     System.out.println("Ingrese el nombre del equipo: ");
-                    // NombreEquipo es una clase tipo enumerador a la cual le creo una instancia
-                    // llamada
-                    // nombreEquipito al lado derecho del igual MostrarGenericos esta es una clase
-                    // la cual tiene
-                    // unas funciones staticas en este caso lo que hace es mostrar lo equipos que
-                    // tiene el enum
-                    // te va a mostrar numeritos eliges el numero y dependiendo del numero te lo
-                    // retorna en la
-                    // instancia nombreEquipito la cual es la que va a hacia el constructor
+                    /*
+                    NombreEquipo es una clase tipo enumerador a la cual le creo una instancia llamada
+                    nombreEquipito al lado derecho del igual MostrarGenericos esta es una clase la cual tiene
+                    unas funciones staticas en este caso lo que hace es mostrar lo equipos que tiene el enum
+                    te va a mostrar numeritos eliges el numero y dependiendo del numero te loretorna en la
+                    instancia nombreEquipito la cual es la que va a hacia el constructor 
+                    */
                     NombreEquipo nombreEquipito = MostrarGenericos.mostrarEquipos();
                     // En la siguiente linea creo un String de nombreEquipito
                     String nombreEquipitoString = nombreEquipito.getnom();
@@ -81,18 +79,19 @@ public class AppMejorada {
                     // extras
                     // Este caso pide los datos de un arquero y tambien lo lee
                     if (agregar == 1) {
-                        // cre una variable quemada para enviar al constructor, sigue pidiendo datos
+                        // cree una variable quemada para enviar al constructor, sigue pidiendo datos
                         String posicion = "Arquero";
                         System.out.println("Ingrese el numero de balones tapados del jugador ");
                         int golesTapados = t.nextInt();
                         System.out.println("      Ingrese la aguilidad de manos con el balon del jugador");
-                        // En la linea siguiente creo una instacia de CalidadJugador llamada
-                        // agilidadManosArquero
-                        // MostrarGenerico es una clase la cual tiene dos metodos estaticos este en este
-                        // caso
-                        // muestra la calidad del jugador con numeritos y dependiendo de la opcion
-                        // ingresa me
-                        // retorna una enumeracion
+                        /*
+                         En la linea siguiente creo una instacia de CalidadJugador llamada
+                        agilidadManosArquero
+                        MostrarGenerico es una clase la cual tiene dos metodos estaticos este en este
+                        caso
+                        muestra la calidad del jugador con numeritos y dependiendo de la opcion
+                        retorna una enumeracion
+                         */
                         CalidadJugador agilidadManosArquero = MostrarGenericos.mostrarCalidad();
                         System.out.println(" Ingrese la salida en falso del jugador");
                         // aca lo mismo que explique ahorita solo que el nombre de la instancia es
@@ -103,18 +102,18 @@ public class AppMejorada {
                         // diferente
                         CalidadJugador juegoAereoDefensivoArquero = MostrarGenericos.mostrarCalidad();
 
-                        // Creo un obejeto de tipo equipoFutbol en este caso extiende de la clase
-                        // Arquero
-                        // despues de hacer le envio los datos capturados anterirormente(envio en
-                        // construto)
+                        // Creo un obejeto de tipo equipoFutbol en este caso extiende de la clase Arquero
+                        // despues de hacer le envio los datos capturados anterirormente(envio en construto)
                         EquipoFutbol arquero = new Arquero(nombreEquipitoString, posicion, nombreEquipito,
                                 numeroJugador, numeroGoles, numeroPases, numeroAutoGoles, salarioJugador, golesTapados,
                                 agilidadManosArquero, salidaFalsoArquero, juegoAereoDefensivoArquero);
-                        // Creo una variable booleana llamada b posterior a eso llamo a la instancia de
-                        // EquipoGenerico
-                        // y llamo a la funcion agregarEquipoGenerico le envio en constructor de la
-                        // clase arquero
-                        // con todos los datos
+                        /*
+                        Creo una variable booleana llamada b posterior a eso llamo a la instancia de
+                        EquipoGenerico
+                        y llamo a la funcion agregarEquipoGenerico le envio en constructor de la
+                        clase arquero
+                        con todos los datos
+                         */
                         boolean b = equipoGenerico.agregarEquipoGenerico(arquero);
                         // Llamo a la instancia de GestionarEquipo y ejecuto la siguiente funcion
                         // mandandole

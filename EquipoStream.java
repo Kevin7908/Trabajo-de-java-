@@ -203,8 +203,7 @@ Supplier<GenerarPartido> partidoEntreEquipos = () -> {
     String nombreEquipoVisitante = NOMBRES_EQUIPOS_VISITANTE[random.nextInt(NOMBRES_EQUIPOS_VISITANTE.length)];
 
     // Crea un objeto GenerarPartido con los valores generados aleatoriamente
-    GenerarPartido generar = new GenerarPartido(nombreJugador, posicion, nombreEquipoLocal, nombreEquipoVisitante,
-            numeroGoles);
+    GenerarPartido generar = new GenerarPartido(nombreJugador, posicion, nombreEquipoLocal, nombreEquipoVisitante,numeroGoles);
         // Retorno un tipo GenerarPartido
     return generar;
 };
